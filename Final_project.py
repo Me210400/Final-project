@@ -82,6 +82,7 @@ def calculate_frequencies(file_contents):
         else:
             "".join(" ")
     filter  = [word for word in new_file if word not in list(punctuations) + uninteresting_words]
+    frequencies = {word: file_contents.count(word) for word in filter}
     #wordcloud
     cloud = wordcloud.WordCloud()
     cloud.generate_from_frequencies(frequencies)
